@@ -2,17 +2,12 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
-func pow(x, n, lim float64) float64 {
-	if v := math.Pow(x, n); v < lim {
-		return v
-	}
-	return lim
-}
-
 func main() {
-	fmt.Println(pow(2, 5, 1000))
-	fmt.Println(pow(2, 10, 1000))
+	if age := 17; age >= 18 {
+		fmt.Println("You are old enough to drive")
+	} else {
+		fmt.Printf("You are %d years old, which is not old enough to drive\n", age)
+	}
 }
