@@ -6,5 +6,5 @@ import (
 )
 
 func main() {
-	fmt.Println("My favorite number is", math.Sqrt(7))
+	fmt.Println(math.Pi) // exported names should start with capital
 }
