@@ -6,10 +6,13 @@ func add(a, b int) int { // a and b has same type, so we can shorten our code
 	return a + b
 }
 
-func printNum(sum int, prefix string) {
-	fmt.Println(prefix, sum)
+func swap(x, y int) (int, int) { // we return two values here, which can be assigned to multiple variables
+	return y, x
 }
 
 func main() {
-	printNum(add(40, 2), "Answer is:")
+	a, b := 5, 10
+	fmt.Println("Before swapping:", a, b)
+	a, b = swap(a, b)
+	fmt.Println("After swapping:", a, b)
 }
