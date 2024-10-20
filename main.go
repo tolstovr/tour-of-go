@@ -2,12 +2,23 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
-func main() {
-	if age := 17; age >= 18 {
-		fmt.Println("You are old enough to drive")
-	} else {
-		fmt.Printf("You are %d years old, which is not old enough to drive\n", age)
+const EPS = 0.00000000000001
+
+func Sqrt(x float64) float64 {
+	z, prev := 1.0, 0.0
+
+	for math.Abs(z-prev) >= EPS {
+		prev = z
+		z -= (z*z - x) / (2 * z)
 	}
+
+	return z
+}
+
+func main() {
+	fmt.Println("Closest square to 49 is", Sqrt(49))
+	fmt.Println("Closest square to 50 is", Sqrt(50))
 }
