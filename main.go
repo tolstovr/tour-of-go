@@ -1,15 +1,12 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Counting:")
+	i := 42
 
-	for i := 0; i <= 10; i++ {
-		defer fmt.Println(i) // defers are stacking!
-	}
-
-	fmt.Println("done... wait, what?!")
+	p := &i         // point to i
+	fmt.Println(*p) // get value from p
+	*p = 21
+	fmt.Println(i) // new value of i
 }
